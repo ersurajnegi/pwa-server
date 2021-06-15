@@ -3,6 +3,8 @@ var app = express();
 var webpush = require("web-push");
 const fetch = require("node-fetch");
 
+const port = process.env.PORT || 3000;
+
 app.get("/test", async (req, res) => {
   const response = await fetch(
     "https://pwatest-negi-default-rtdb.firebaseio.com/subscriptions.json"
@@ -47,7 +49,7 @@ app.get("/test", async (req, res) => {
   res.send("HI");
 });
 
-var server = app.listen(8081, function () {
+var server = app.listen(port, function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log("Example app listening at http://%s:%s", host, port);
