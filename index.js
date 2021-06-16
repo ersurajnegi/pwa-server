@@ -34,6 +34,7 @@ app.get("/test", async (req, res) => {
         JSON.stringify({
           title: "New Post from FireBase Server",
           content: "New Post added!",
+          openUrl: "/help",
         })
       )
       .then(function (data) {
